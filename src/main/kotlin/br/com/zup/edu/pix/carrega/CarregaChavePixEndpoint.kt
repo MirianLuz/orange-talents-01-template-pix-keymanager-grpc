@@ -3,7 +3,7 @@ package br.com.zup.edu.pix
 import br.com.zup.edu.CarregaChavePixRequest
 import br.com.zup.edu.CarregaChavePixResponse
 import br.com.zup.edu.KeymanagerCarregaGrpcServiceGrpc
-import br.com.zup.edu.pix.BancoCentralClient
+import br.com.zup.edu.pix.carrega.CarregaChavePixResponseConverter
 import br.com.zup.edu.validation.ErrorHandler
 import io.grpc.stub.StreamObserver
 import javax.inject.Inject

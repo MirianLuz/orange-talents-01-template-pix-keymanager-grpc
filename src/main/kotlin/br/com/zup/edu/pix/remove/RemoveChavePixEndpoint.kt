@@ -1,4 +1,4 @@
-package br.com.zup.edu.pix
+package br.com.zup.edu.pix.remove
 
 import br.com.zup.edu.KeymanagerRemoveGrpcServiceGrpc
 import br.com.zup.edu.RemoveChavePixRequest

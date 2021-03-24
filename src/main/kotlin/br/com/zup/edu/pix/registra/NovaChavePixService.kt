@@ -1,5 +1,6 @@
-package br.com.zup.edu.pix
+package br.com.zup.edu.pix.registra
 
+import br.com.zup.edu.pix.*
 import br.com.zup.edu.validation.ChavePixExistenteException
 import io.micronaut.http.HttpStatus
 import io.micronaut.validation.Validated

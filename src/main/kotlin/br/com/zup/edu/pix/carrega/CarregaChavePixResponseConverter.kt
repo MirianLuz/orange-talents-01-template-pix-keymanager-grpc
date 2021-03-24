@@ -1,8 +1,9 @@
-package br.com.zup.edu.pix
+package br.com.zup.edu.pix.carrega
 
 import br.com.zup.edu.CarregaChavePixResponse
 import br.com.zup.edu.TipoChave
 import br.com.zup.edu.TipoConta
+import br.com.zup.edu.pix.ChavePixInfo
 import com.google.protobuf.Timestamp
 import java.time.ZoneId
 

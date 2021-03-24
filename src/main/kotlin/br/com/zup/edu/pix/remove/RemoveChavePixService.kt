@@ -1,8 +1,9 @@
-package br.com.zup.edu.pix
+package br.com.zup.edu.pix.remove
 
 import br.com.zup.edu.pix.BancoCentralClient
 import br.com.zup.edu.validation.ChavePixNaoEncontradaException
 import br.com.zup.edu.pix.ChavePixRepository
+import br.com.zup.edu.pix.DeletePixKeyRequest
 import br.com.zup.edu.validation.ValidUUID
 import io.micronaut.http.HttpStatus
 import io.micronaut.validation.Validated

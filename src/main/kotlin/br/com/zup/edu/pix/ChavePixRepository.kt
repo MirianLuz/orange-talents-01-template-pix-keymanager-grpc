@@ -1,5 +1,6 @@
 package br.com.zup.edu.pix
 
+import br.com.zup.edu.ListaChavePixResponse
 import io.micronaut.context.annotation.Executable
 import io.micronaut.data.annotation.Repository
 import io.micronaut.data.jpa.repository.JpaRepository
@@ -14,4 +15,6 @@ interface ChavePixRepository : JpaRepository<ChavePix, UUID>{
     fun findByIdAndClienteId(uuidPixId: UUID?, uuidClienteId: UUID?): Optional<ChavePix>
 
     fun findByChave(chave: String): Optional<ChavePix>
+
+    fun findAllByClienteId(clienteId: UUID?): List<ChavePix>
 }

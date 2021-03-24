@@ -1,6 +1,7 @@
-package br.com.zup.edu.pix
+package br.com.zup.edu.pix.carrega
 
 import br.com.zup.edu.pix.BancoCentralClient
+import br.com.zup.edu.pix.ChavePixInfo
 import br.com.zup.edu.validation.ChavePixNaoEncontradaException
 import br.com.zup.edu.pix.ChavePixRepository
 import br.com.zup.edu.validation.ValidUUID
@@ -28,7 +29,7 @@ sealed class Filtro {
         override fun filtra(repository: ChavePixRepository, bcbClient: BancoCentralClient): ChavePixInfo {
             return repository.findById(pixIdAsUuid())
                 .filter { it.pertenceAo(clienteIdAsUuid())!! }
-                .map(ChavePixInfo::of)
+                .map(ChavePixInfo.Companion::of)
                 .orElseThrow { ChavePixNaoEncontradaException("Chave Pix não encontrada") }
         }
     }
@@ -40,7 +41,7 @@ sealed class Filtro {
 
         override fun filtra(repository: ChavePixRepository, bcbClient: BancoCentralClient): ChavePixInfo {
             return repository.findByChave(chave)
-                .map(ChavePixInfo::of)
+                .map(ChavePixInfo.Companion::of)
                 .orElseGet {
                     LOGGER.info("Consultando chave Pix '$chave' no Banco Central do Brasil (BCB)")
 

@@ -2,7 +2,7 @@ package br.com.zup.edu.pix
 
 import br.com.zup.edu.CarregaChavePixRequest
 import br.com.zup.edu.CarregaChavePixRequest.FiltroCase.*
-import br.com.zup.edu.pix.Filtro
+import br.com.zup.edu.pix.carrega.Filtro
 import javax.validation.ConstraintViolationException
 import javax.validation.Validator
 

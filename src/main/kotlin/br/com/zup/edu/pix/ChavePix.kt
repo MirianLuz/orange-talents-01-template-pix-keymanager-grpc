@@ -12,7 +12,7 @@ data class ChavePix(
 
     @field:NotNull
     @Column(nullable = false)
-    val clientId: UUID,
+    val clienteId: UUID?,
 
     @field:NotNull
     @Enumerated(EnumType.STRING)
@@ -21,7 +21,7 @@ data class ChavePix(
 
     @field:NotBlank
     @Column(unique = true, nullable = false)
-    val chave: String,
+    var chave: String,
 
     @field:NotNull
     @Enumerated(EnumType.STRING)
@@ -30,16 +30,23 @@ data class ChavePix(
 
     @field:Valid
     @Embedded
-    val conta: ContaAssociada
+    val conta: ContaAssociada,
+
+    @Column(nullable = false)
+    val criadaEm: LocalDateTime = LocalDateTime.now()
 ){
     @Id
     @GeneratedValue
     val id: UUID? = null
 
-    @Column(nullable = false)
-    val criadaEm: LocalDateTime = LocalDateTime.now()
 
     override fun toString(): String {
-        return "ChavePix(clientId=$clientId, tipo=$tipo, chave=$chave, tipoDeConta=$tipoDeConta, conta=$conta"
+        return "ChavePix(clientId=$clienteId, tipo=$tipo, chave=$chave, tipoDeConta=$tipoDeConta, conta=$conta"
     }
+
+    fun atualiza(key: String) {
+        this.chave = key
+    }
+
+    fun pertenceAo(clienteId: UUID) = this.clienteId?.equals(clienteId)
 }

@@ -10,7 +10,7 @@ import javax.inject.Singleton
 
 @ErrorHandler
 @Singleton
-class RegistraChaveEndpoint(@Inject private val service: NovaChavePixService): KeymanagerRegistraGrpcServiceGrpc.KeymanagerRegistraGrpcServiceImplBase() {
+class RegistraChavePixEndpoint(@Inject private val service: NovaChavePixService): KeymanagerRegistraGrpcServiceGrpc.KeymanagerRegistraGrpcServiceImplBase() {
 
     override fun registra(
         request: RegistraChavePixRequest,
@@ -20,7 +20,7 @@ class RegistraChaveEndpoint(@Inject private val service: NovaChavePixService): K
         val chaveCriada = service.registra(novaChave)
 
         responseObserver.onNext(RegistraChavePixResponse.newBuilder()
-            .setClientId(chaveCriada.clientId.toString())
+            .setClientId(chaveCriada.clienteId.toString())
             .setPixId(chaveCriada.id.toString())
             .build())
 
